@@ -1,0 +1,341 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>World of Law</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: editorial single column, wide hero type, ruled archive index with a quiet oxblood accent. */
+:root{
+  --paper:#eceef0;
+  --paper-2:#e2e5e9;
+  --ink:#14181f;
+  --ink-2:#4a525f;
+  --rule:#c6cbd3;
+  --oxblood:#8a1f30;
+  --on-accent:#ffffff;
+  --display:'Bodoni Moda','Didot','Times New Roman',serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11141a;--paper-2:#181c24;--ink:#e9ebef;--ink-2:#9aa3b1;--rule:#2b313c;--oxblood:#e0707f;--on-accent:#11141a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11141a;--paper-2:#181c24;--ink:#e9ebef;--ink-2:#9aa3b1;--rule:#2b313c;--oxblood:#e0707f;--on-accent:#11141a;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.01em}
+em{font-style:italic;color:var(--oxblood)}
+
+/* header */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:1.25rem}
+.mark{width:34px;height:34px;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:1.05rem;font-style:italic}
+nav{display:flex;gap:28px;font-size:.92rem;color:var(--ink-2)}
+nav a:hover{color:var(--oxblood)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;padding-block:72px 64px;align-items:end}
+.hero h1{font-size:clamp(2.8rem,7.6vw,6rem);line-height:.98;margin-block:18px 26px}
+.hero p.lede{max-width:46ch;color:var(--ink-2);font-size:1.08rem;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 22px;border:1px solid var(--ink);font-size:.92rem;font-weight:500;transition:.2s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--oxblood);border-color:var(--oxblood);color:var(--on-accent)}
+.btn.line:hover{border-color:var(--oxblood);color:var(--oxblood)}
+.stat{display:flex;gap:14px;align-items:baseline;margin-top:34px;padding-top:18px;border-top:1px solid var(--rule)}
+.stat b{font-family:var(--display);font-size:2rem;font-weight:400}
+
+/* pick */
+.pick{background:var(--ink);color:var(--paper);padding:34px 32px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.pick .mono{color:color-mix(in srgb,var(--paper) 62%,transparent)}
+.pick h2{font-size:1.85rem;line-height:1.15}
+.pick blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.1rem;line-height:1.5;color:color-mix(in srgb,var(--paper) 82%,transparent)}
+.pick .by{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent);padding-top:14px;font-size:.88rem}
+.pick button{align-self:flex-start;background:none;border:0;border-bottom:1px solid currentColor;padding:0 0 2px;color:var(--paper)}
+.pick button:hover{opacity:.7}
+
+/* sections */
+section{padding-block:80px;border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.05;margin-top:12px}
+.sec-head p{margin:0;color:var(--ink-2);max-width:46ch}
+
+/* archive */
+.tools{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.search{position:relative;flex:1 1 280px;max-width:420px}
+.search input{width:100%;background:transparent;border:0;border-bottom:1.5px solid var(--ink);padding:12px 40px 12px 0;font:inherit;color:var(--ink);border-radius:0}
+.search input::placeholder{color:var(--ink-2)}
+.search input:focus{outline:none;border-color:var(--oxblood)}
+.search kbd{position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.7rem;border:1px solid var(--rule);padding:1px 7px;color:var(--ink-2)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:transparent;border:1px solid var(--rule);padding:7px 14px;font-size:.84rem;color:var(--ink-2);transition:.15s}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:14px;border-bottom:1px solid var(--ink)}
+
+.list{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:90px minmax(0,1.6fr) minmax(0,1.3fr) auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0;transition:.2s}
+.row:hover{background:var(--paper-2);padding-inline:14px}
+.row .yr{font-family:var(--mono);font-size:.85rem;color:var(--oxblood)}
+.row h3{font-size:1.5rem;line-height:1.2}
+.row .sub{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+.row .gist{color:var(--ink-2);font-size:.95rem}
+.row .go{font-size:.88rem;white-space:nowrap}
+.empty{padding:48px 0;color:var(--ink-2)}
+
+/* quote */
+.note{padding-block:90px;border-top:1px solid var(--rule);text-align:left;display:grid;grid-template-columns:90px minmax(0,1fr);gap:24px}
+.note .q{font-family:var(--display);font-size:5rem;line-height:.7;color:var(--oxblood)}
+.note blockquote{margin:0;font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.25;max-width:26ch;text-wrap:balance}
+.note cite{display:block;margin-top:22px;font-style:normal}
+
+/* jurists */
+.jur{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.j{padding:26px 22px 30px 0;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:10px}
+.j+.j{padding-left:22px}
+.j:last-child{border-right:0}
+.j .n{font-family:var(--mono);font-size:.75rem;color:var(--oxblood)}
+.j h3{font-size:1.45rem;line-height:1.15}
+.j .dates{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);letter-spacing:.06em}
+.j p{margin:4px 0 0;color:var(--ink-2);font-size:.92rem}
+
+/* signup */
+.sign{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end}
+.sign h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.05;margin-block:12px 16px}
+.sign p{margin:0;color:var(--ink-2);max-width:44ch}
+form{display:flex;border-bottom:1.5px solid var(--ink)}
+form input{flex:1;min-width:0;background:transparent;border:0;padding:14px 0;font:inherit;color:var(--ink);border-radius:0}
+form input:focus{outline:none}
+form:focus-within{border-color:var(--oxblood)}
+form button{background:none;border:0;font-size:1.4rem;padding:0 6px;color:var(--oxblood)}
+.ok{min-height:1.5em;margin-top:12px;color:var(--oxblood);font-size:.9rem}
+
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:30px 40px;border-top:1px solid var(--ink)}
+
+/* modal */
+.scrim{position:fixed;inset:0;background:color-mix(in srgb,var(--ink) 55%,transparent);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:50}
+.scrim[hidden]{display:none}
+.dlg{background:var(--paper);border:1px solid var(--ink);max-width:620px;width:100%;max-height:100%;overflow:auto;padding:40px 38px;position:relative}
+.dlg h2{font-size:2rem;line-height:1.15;margin-block:14px 6px}
+.dlg .court{color:var(--ink-2);font-size:.92rem;margin:0 0 22px}
+.dlg h4{margin:20px 0 6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--oxblood);font-weight:500}
+.dlg p{margin:0}
+.x{position:absolute;top:12px;right:14px;background:none;border:0;font-size:1.8rem;line-height:1;color:var(--ink-2);padding:6px 10px}
+.x:hover{color:var(--oxblood)}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero,.sec-head,.sign{grid-template-columns:minmax(0,1fr);gap:28px}
+  .hero{padding-block:48px 40px}
+  section{padding-block:56px}
+  .row{grid-template-columns:minmax(0,1fr);gap:8px;padding:22px 0}
+  .row .go{display:none}
+  .jur{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .j:nth-child(2){border-right:0}
+  .j:nth-child(3){padding-left:0;border-top:1px solid var(--rule)}
+  .j:nth-child(4){border-top:1px solid var(--rule)}
+  .note{grid-template-columns:minmax(0,1fr);gap:0;padding-block:56px}
+  .dlg{padding:36px 22px 28px}
+}
+@media (max-width:480px){
+  .jur{grid-template-columns:minmax(0,1fr)}
+  .j,.j+.j{padding:22px 0;border-right:0;border-top:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<div class="wrap" id="home">
+  <header class="top">
+    <a class="brand" href="#home"><span class="mark">W</span>world of law</a>
+    <nav><a href="#library">Cases</a><a href="#jurists">Jurists</a><a href="#notes">Notes</a></nav>
+    <span class="mono">Issue 09 / 2026</span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="mono">A living case-law archive</span>
+      <h1>Law that<br>reads <em>like history.</em></h1>
+      <p class="lede">A carefully gathered archive of the judgments that changed how courts treat power, liability, liberty and equality. Each case is summarised in plain language and built to be read slowly.</p>
+      <div class="btns">
+        <a class="btn solid" href="#library">Explore the archive →</a>
+        <a class="btn line" href="#jurists">Meet the jurists</a>
+      </div>
+      <div class="stat"><b>08</b><span class="mono">landmark judgments, read slowly</span></div>
+    </div>
+    <aside class="pick">
+      <span class="mono">Editor's pick</span>
+      <h2>Marbury v. Madison</h2>
+      <blockquote>“It is emphatically the province and duty of the judicial department to say what the law is.”</blockquote>
+      <div class="by"><span>Chief Justice John Marshall</span><span class="mono">1803</span></div>
+      <button type="button" data-open="0">Read the case →</button>
+    </aside>
+  </div>
+
+  <section id="library">
+    <div class="sec-head">
+      <div><span class="mono">The archive</span><h2>Find your <em>next precedent.</em></h2></div>
+      <p>Search by case, court or subject. Every judgment here is chosen because it still decides arguments today.</p>
+    </div>
+    <div class="tools">
+      <div class="search"><input id="q" type="search" placeholder="Search cases, courts, principles" aria-label="Search cases"><kbd>/</kbd></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="meta"><span class="mono" id="count">08 cases</span><span class="mono">Landmark judgments</span></div>
+    <ul class="list" id="list"></ul>
+  </section>
+
+  <div class="note" id="notes">
+    <div class="q">“</div>
+    <div>
+      <blockquote>A judgment is a room you can carry. Enter it often, and test the walls.</blockquote>
+      <cite class="mono">World of Law &nbsp;/&nbsp; Reading note 001</cite>
+    </div>
+  </div>
+
+  <section id="jurists">
+    <div class="sec-head">
+      <div><span class="mono">The bench</span><h2>Meet the <em>jurists.</em></h2></div>
+      <p>Four judges whose opinions shaped the cases in this archive. Begin anywhere.</p>
+    </div>
+    <div class="jur">
+      <div class="j"><span class="n">01</span><h3>John Marshall</h3><span class="dates">1755 – 1835</span><p>Judicial review and the reach of the Constitution.</p></div>
+      <div class="j"><span class="n">02</span><h3>Lord Atkin</h3><span class="dates">1867 – 1944</span><p>The neighbour principle and the modern law of negligence.</p></div>
+      <div class="j"><span class="n">03</span><h3>Earl Warren</h3><span class="dates">1891 – 1974</span><p>Equal protection and the rights of the accused.</p></div>
+      <div class="j"><span class="n">04</span><h3>H. R. Khanna</h3><span class="dates">1912 – 2008</span><p>The basic structure of the Indian Constitution.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sign">
+      <div>
+        <span class="mono">The reading list</span>
+        <h2>One judgment. <em>Every Sunday.</em></h2>
+        <p>One landmark case, one short note on why it matters, and nothing else in your inbox.</p>
+      </div>
+      <div>
+        <form id="f"><input id="email" type="email" placeholder="you@example.com" aria-label="Email address" required><button type="submit" aria-label="Subscribe">→</button></form>
+        <div class="ok" id="ok" role="status"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><span class="brand" style="font-size:1rem"><span class="mark" style="width:26px;height:26px;font-size:.85rem">W</span>world of law</span><span class="mono">Made for slow reading</span><span class="mono">© World of Law. For education, not legal advice.</span></footer>
+</div>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dt">
+    <button class="x" id="x" aria-label="Close">×</button>
+    <span class="mono" id="dm"></span>
+    <h2 id="dt"></h2>
+    <p class="court" id="dc"></p>
+    <h4>The question</h4><p id="dq"></p>
+    <h4>The holding</h4><p id="dh"></p>
+    <h4>Why it still matters</h4><p id="dw"></p>
+  </div>
+</div>
+
+<script>
+const CASES=[
+{t:"Marbury v. Madison",y:1803,c:"US Supreme Court",a:"Constitutional",g:"The Court claims the power to strike down laws that conflict with the Constitution.",
+ q:"Can the Supreme Court refuse to apply an Act of Congress that contradicts the Constitution?",
+ h:"Yes. Chief Justice Marshall held that a law repugnant to the Constitution is void, and that deciding what the law is falls to the courts. The Court declined William Marbury's request because the statute that gave it jurisdiction went beyond what Article III allowed.",
+ w:"This is the origin of judicial review in the United States and a model for courts that review legislation elsewhere."},
+{t:"Salomon v. A Salomon & Co Ltd",y:1897,c:"House of Lords",a:"Corporate",g:"A company is a legal person, separate from the people who own it.",
+ q:"Is a shareholder personally liable for the debts of a company he controls completely?",
+ h:"No. Once properly incorporated, the company is a distinct legal person. Aron Salomon held nearly all of its shares and was also a secured creditor, and the House of Lords held he was not liable for the company's debts.",
+ w:"Separate legal personality and limited liability underpin modern company law. Courts lift the veil only in narrow cases of fraud or sham."},
+{t:"Donoghue v. Stevenson",y:1932,c:"House of Lords",a:"Civil",g:"A manufacturer owes a duty of care to the person who finally uses the product.",
+ q:"Can a consumer who has no contract with the manufacturer sue for harm caused by a defective product?",
+ h:"Yes. Lord Atkin reasoned that you must take reasonable care to avoid acts or omissions you can reasonably foresee would injure your neighbour, meaning those closely and directly affected by what you do.",
+ w:"The neighbour principle is the starting point of the modern tort of negligence across the common law world."},
+{t:"Brown v. Board of Education",y:1954,c:"US Supreme Court",a:"Rights",g:"Separate public schools for Black and white children are unequal by their nature.",
+ q:"Does racial segregation in public schools violate the Equal Protection Clause, even if the facilities are comparable?",
+ h:"Yes. Chief Justice Warren wrote for a unanimous Court that separate educational facilities are inherently unequal, overruling the separate but equal doctrine of Plessy v. Ferguson in public education.",
+ w:"The decision opened the way for the dismantling of legal segregation and remains a reference point in equality litigation."},
+{t:"Miranda v. Arizona",y:1966,c:"US Supreme Court",a:"Criminal",g:"Suspects must be told of their rights before police questioning begins.",
+ q:"When may a statement made during custodial police interrogation be used against the accused?",
+ h:"Only if, before questioning, the person was warned of the right to remain silent, that anything said may be used in court, and of the right to a lawyer, and then knowingly waived those rights.",
+ w:"The Miranda warning is now a routine part of police procedure and a familiar scene in courtrooms and films."},
+{t:"Kesavananda Bharati v. State of Kerala",y:1973,c:"Supreme Court of India",a:"Constitutional",g:"Parliament may amend the Constitution, but not its basic structure.",
+ q:"How far can Parliament's power to amend the Constitution of India extend?",
+ h:"By a narrow majority of 7 to 6 in a thirteen-judge bench, the Court held that Parliament can amend any provision, but cannot alter the basic structure or framework of the Constitution.",
+ w:"The basic structure doctrine has since been used to review constitutional amendments and protects core features such as judicial review and the rule of law."},
+{t:"Maneka Gandhi v. Union of India",y:1978,c:"Supreme Court of India",a:"Rights",g:"A law that limits personal liberty must be fair, just and reasonable.",
+ q:"What does the guarantee of personal liberty in Article 21 require of a law that restricts it?",
+ h:"The Court held that the procedure must be fair, just and reasonable, and that Articles 14, 19 and 21 must be read together. A fixed procedure that is arbitrary does not satisfy Article 21.",
+ w:"The judgment widened Article 21 and led to later rights, including the right to livelihood, dignity and a clean environment."},
+{t:"Vishaka v. State of Rajasthan",y:1997,c:"Supreme Court of India",a:"Rights",g:"The Court lays down binding guidelines against sexual harassment at work.",
+ q:"What protection exists for women against sexual harassment at the workplace when no statute covers it?",
+ h:"Relying on Articles 14, 15, 19 and 21 and international conventions, the Court issued guidelines, now known as the Vishaka Guidelines, that employers were bound to follow until Parliament legislated.",
+ w:"The guidelines were the legal basis for workplace complaint committees until the Sexual Harassment of Women at Workplace Act, 2013."}
+];
+const AREAS=["All","Constitutional","Civil","Corporate","Criminal","Rights"];
+let area="All",term="";
+const $=id=>document.getElementById(id);
+const chips=$("chips"),list=$("list"),count=$("count"),scrim=$("scrim");
+
+function drawChips(){
+  chips.innerHTML="";
+  AREAS.forEach(a=>{
+    const b=document.createElement("button");
+    b.className="chip";b.type="button";b.textContent=a;b.setAttribute("aria-pressed",String(a===area));
+    b.onclick=()=>{area=a;drawChips();drawList()};
+    chips.appendChild(b);
+  });
+}
+function drawList(){
+  const s=term.trim().toLowerCase();
+  const rows=CASES.map((c,i)=>({c,i})).filter(({c})=>
+    (area==="All"||c.a===area)&&(!s||[c.t,c.c,c.a,c.g,String(c.y)].join(" ").toLowerCase().includes(s)));
+  count.textContent=String(rows.length).padStart(2,"0")+(rows.length===1?" case":" cases");
+  list.innerHTML="";
+  if(!rows.length){list.innerHTML='<li class="empty">No case matches that search. Try a court, a year or a subject.</li>';return}
+  rows.forEach(({c,i})=>{
+    const li=document.createElement("li");
+    const b=document.createElement("button");
+    b.type="button";b.className="row";b.dataset.open=i;
+    b.innerHTML='<span class="yr">'+c.y+'</span><span><h3></h3><span class="sub"></span></span><span class="gist"></span><span class="go">Read the case →</span>';
+    b.querySelector("h3").textContent=c.t;
+    b.querySelector(".sub").textContent=c.a+" · "+c.c;
+    b.querySelector(".gist").textContent=c.g;
+    li.appendChild(b);list.appendChild(li);
+  });
+}
+let lastFocus=null;
+function openCase(i){
+  const c=CASES[i];
+  $("dm").textContent=c.a+" · "+c.y;
+  $("dt").textContent=c.t;$("dc").textContent=c.c;
+  $("dq").textContent=c.q;$("dh").textContent=c.h;$("dw").textContent=c.w;
+  lastFocus=document.activeElement;scrim.hidden=false;$("x").focus();
+}
+function closeCase(){scrim.hidden=true;if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+document.addEventListener("click",e=>{
+  const o=e.target.closest("[data-open]");
+  if(o){openCase(+o.dataset.open)}
+});
+$("x").onclick=closeCase;
+scrim.addEventListener("click",e=>{if(e.target===scrim)closeCase()});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&!scrim.hidden)closeCase();
+  if(e.key==="/"&&document.activeElement.tagName!=="INPUT"){e.preventDefault();$("q").focus()}
+});
+$("q").addEventListener("input",e=>{term=e.target.value;drawList()});
+$("f").addEventListener("submit",e=>{
+  e.preventDefault();
+  $("ok").textContent="Thanks. Your first judgment arrives this Sunday.";
+  $("f").reset();
+});
+drawChips();drawList();
+</script>
+
+</body></html>
